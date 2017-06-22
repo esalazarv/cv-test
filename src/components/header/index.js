@@ -2,6 +2,8 @@
  * Dependencies
  */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 /**
  * Assets
@@ -21,7 +23,7 @@ class Header extends Component {
                         <img src={Logo} alt="claro video"/>
                     </div>
                     <ul className="links">
-                        {links && links.map((item, key) => <li key={key}><a href="#">{item.display_name}</a></li>)}
+                        {links && links.map((item, key) => <li key={key}><Link to={item.url}>{item.display_name}</Link></li>)}
                     </ul>
                 </div>
             </div>

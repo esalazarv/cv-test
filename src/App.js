@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header/Header';
-import SearchBar from './components/search-bar/SearchBar';
-import MovieList from './components/movie-list/MovieList';
-import Footer from './components/footer/Footer';
+import Header from './components/header/index';
+import Footer from './components/footer';
+import Content from './components/content';
 
 class App extends Component {
+
     constructor() {
         super();
         this.state = {
@@ -25,18 +25,19 @@ class App extends Component {
             ]
         }
     }
+
     render() {
+        const { children } = this.props;
+
         return (
             <div className="App">
                 <Header links={ this.state.links }/>
-                <div className="container">
-                    <SearchBar/>
-                    <MovieList/>
-                </div>
+                <Content body={children}/>
                 <Footer/>
             </div>
         );
     }
+
 }
 
 export default App;

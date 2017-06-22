@@ -1,6 +1,30 @@
+/**
+ * Dependencies
+ */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+/**
+ * Components
+ */
+import Routes from './Routes';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+import reducers from './RootReducer';
+
+/**
+ * Assets
+ */
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <Router>
+            <Routes/>
+        </Router>
+    </Provider>,
+    document.getElementById('app')
+);
