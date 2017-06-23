@@ -9,15 +9,16 @@ import axios from 'axios';
 
 import config from './config';
 
-export const GET_MOVIES = 'GET_MOVIES';
+export const GET_MOVIE_DETAIL = 'GET_MOVIE_DETAIL';
 
-export function getMovies(parameters = {}) {
+
+export function getMovieDetail(id = null) {
 
     return (dispatch) => {
-        config.params = Object.assign({}, config.params, parameters);
+        config.params = Object.assign({}, config.params, {group_id: id});
         const resource = axios.create(config);
         resource.get(config.url)
-            .then((response) => dispatch({ type: GET_MOVIES, payload: response.data.response.groups }))
+            .then((response) => dispatch({ type: GET_MOVIE_DETAIL, payload: response.data.response.group.common }))
             .catch((error) => console.warn(error));
     }
 }

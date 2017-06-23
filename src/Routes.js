@@ -13,15 +13,17 @@ import { Route, Switch } from 'react-router-dom';
  * containers
  */
 import App from './App';
-import Home from './containers/home';
-import Categories from './containers/categories';
+import HomeContainer from './containers/home';
+import MovieContainer from './containers/movie';
+import CategoriesContainer from './containers/categories';
 import PageNotFound from './containers/PageNotFound';
 
 const Routes  = () =>
     <App>
         <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/categories" component={Categories}/>
+            <Route exact path="/" component={HomeContainer}/>
+            <Route exact path="/categories" component={CategoriesContainer}/>
+            <Route exact path="/movie/:id" component={MovieContainer}/>
             <Route component={PageNotFound}/>
         </Switch>
     </App>

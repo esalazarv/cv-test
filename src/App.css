@@ -1,3 +1,24 @@
 body {
-  background: white;
+  background: black;
+  color: darkgray;
+}
+
+.container {
+  width: 100%;
+  padding-top: 10px;
+}
+
+
+@media only screen and (min-width : 992px) {
+  .container{
+    width: 900px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .container{
+    width: 1190px;
+    margin: auto;
+  }
 }

@@ -7,9 +7,11 @@
  */
 import { combineReducers } from 'redux';
 import { getMovies } from './components/movie-list/reducers';
+import { getMovieDetail } from "./components/movie/reducers";
 
 const reducers = combineReducers({
-    movies: getMovies
+    movies: getMovies,
+    currentMovie: getMovieDetail
 });
 
 export default reducers;

@@ -10,12 +10,14 @@ import React, { Component } from 'react';
  * Components
  */
 import MovieList from "../../components/movie-list";
+import SearchBar from "../../components/search-bar/index";
 
-class Home extends Component {
+class HomeContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <SearchBar/>
                 <MovieList/>
             </div>
         );
@@ -23,4 +25,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default HomeContainer;

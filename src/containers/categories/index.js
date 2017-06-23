@@ -6,11 +6,11 @@
  */
 import React, { Component } from 'react';
 
-class Categories extends Component {
+class CategoriesContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>Categories</h1>
             </div>
         );
@@ -18,4 +18,4 @@ class Categories extends Component {
 
 }
 
-export default Categories;
+export default CategoriesContainer;

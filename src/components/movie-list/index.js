@@ -1,9 +1,17 @@
 /**
  * Created by eduardosalazar on 21/06/17.
  */
+/**
+ * Dependencies
+ */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies } from "./actions";
+
+/**
+ * Components
+ */
+import Thumbnail from './thumbnail';
 
 class MovieList extends Component {
 
@@ -12,7 +20,10 @@ class MovieList extends Component {
     }
 
     listMovies(movies = []) {
-        return movies.map((movie) => <li key={movie.id}>{movie.title}</li>)
+        if(!movies.length) {
+            return <h1> No results </h1>;
+        }
+        return movies.map((movie) => <Thumbnail key={movie.id} movie={movie}/>);
     }
 
     render() {
